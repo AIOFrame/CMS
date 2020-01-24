@@ -1,0 +1,137 @@
+$g1: #F0F0F0;
+$g2: #e1e1e1;
+$g3: #c8c8c8;
+$g4: #afafaf;
+$g5: #878787;
+$g6: #5f5f5f;
+
+/* BASE */
+
+div, input, select, textarea, i, span, h1, h2, h3, h4, h5, h6, button, a {
+  font-family: 'Lato', sans-serif;
+}
+body {
+  background: $g1;
+}
+article {
+  margin:30px 30px 30px 400px;
+}
+
+/* Header */
+
+header {
+  position: fixed;
+  left: 30px;
+  top: 30px;
+  height: calc(100vh - 60px);
+  width:340px;
+  border-radius:15px;
+  box-shadow:0 0 30px rgba(0,0,0,.1);
+  background:#fff;
+  padding: 30px;
+  .copy {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform:translateX(-50%);
+    color:$g4;
+    font-size: 12px;
+  }
+}
+.brand {
+  padding: 20px 10px 30px;
+  font-size: 40px;
+  width: 100%;
+  z-index: 20;
+  position: relative;
+  display: block;
+  font-family: "Eiforya",sans-serif;
+  text-align: center;
+  color:#3BA3D1;
+}
+#user {
+  border:1px solid $g2;
+  padding: 10px;
+  border-radius:10px;
+  transition:.5s;
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  cursor: pointer;
+  margin-bottom: 30px;
+  .pic {
+    width:45px;
+    height:45px;
+    flex:0 0 45px;
+    border-radius:5px;
+    margin-right: 10px;
+    background-size:cover;
+    transition: .6s;
+  }
+  .name {
+    flex: 0 0 calc(100% - 55px);
+    transition: .6s;
+  }
+  .more {
+    overflow: hidden;
+    height:0;
+    transition: .6s;
+    .btn, button {
+      margin: 0;
+    }
+  }
+}
+#user:hover {
+  border:1px solid transparent;
+  box-shadow:0 0 30px rgba(0,0,0,.1);
+}
+#menu {
+  > ul {
+    > li {
+      > a {
+        font-size: 18px;
+        padding: 15px 20px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: $g5
+      }
+      > ul {
+        height:0;
+        overflow:hidden;
+        > li {
+          > a {
+            padding: 8px 20px;
+          }
+        }
+      }
+    }
+  }
+  > ul.on {
+    background: $g1;
+    border-radius:10px;
+    > li > a {
+      color:$g6;
+    }
+    > li > ul {
+      height: auto;
+      padding-bottom: 10px;
+    }
+  }
+  li {
+    list-style: none;
+  }
+  a {
+    display: block;
+    font-weight: lighter;
+  }
+}
+
+/* Sub Header */
+
+.shed {
+  background:rgba(255,255,255,.95);
+  box-shadow:0 0 30px rgba(0,0,0,.1);
+  padding:15px;
+  border-radius:15px;
+}
