@@ -4,6 +4,10 @@ $g3: #c8c8c8;
 $g4: #afafaf;
 $g5: #878787;
 $g6: #5f5f5f;
+$c: #3ba3d1;
+$w: #fff;
+$b: #000;
+$s: rgba(0,0,0,.1);
 
 /* BASE */
 
@@ -26,7 +30,7 @@ header {
   height: calc(100vh - 60px);
   width:340px;
   border-radius:15px;
-  box-shadow:0 0 30px rgba(0,0,0,.1);
+  box-shadow:0 0 30px $s;
   background:#fff;
   padding: 30px;
   .copy {
@@ -47,7 +51,7 @@ header {
   display: block;
   font-family: "Eiforya",sans-serif;
   text-align: center;
-  color:#3BA3D1;
+  color:$c;
 }
 #user {
   border:1px solid $g2;
@@ -84,21 +88,30 @@ header {
 }
 #user:hover {
   border:1px solid transparent;
-  box-shadow:0 0 30px rgba(0,0,0,.1);
+  box-shadow:0 0 30px $s;
 }
 #menu {
   > ul {
+    background:none;
+    transition:.6s;
     > li {
+      position: relative;
+      border:1px solid transparent;
+      margin-bottom: 5px;
+      transition:.6s;
       > a {
         font-size: 18px;
         padding: 15px 20px;
         text-transform: uppercase;
         letter-spacing: 2px;
-        color: $g5
+        color: $g5;
+        background-size:30px;
+        transition:.6s;
       }
       > ul {
         height:0;
         overflow:hidden;
+        border-radius:0 0 10px 10px;
         > li {
           > a {
             padding: 8px 20px;
@@ -107,15 +120,39 @@ header {
       }
     }
   }
+  > ul:not(.on) {
+    > li:hover {
+      border:1px solid $g2;
+      border-radius:10px;
+      > ul {
+        background: $g1;
+        width:calc(100% - 20px);
+        position:absolute;
+        height:auto;
+        padding: 5px 0 10px;
+        box-sizing: border-box;
+        left: 10px;
+        z-index:99;
+        border:1px solid $w;
+        margin-top: -1px;
+      }
+    }
+  }
   > ul.on {
-    background: $g1;
     border-radius:10px;
+    > li {
+    }
     > li > a {
-      color:$g6;
+      border-radius:10px;
+      background-color: $c;
+      color:$w;
     }
     > li > ul {
       height: auto;
       padding-bottom: 10px;
+      width:calc(100% - 20px);
+      margin-left: 10px;
+      background-color: $g1;
     }
   }
   li {
@@ -124,6 +161,8 @@ header {
   a {
     display: block;
     font-weight: lighter;
+    background-position: 10px center;
+    background-repeat: no-repeat;
   }
 }
 
@@ -131,7 +170,26 @@ header {
 
 .shed {
   background:rgba(255,255,255,.95);
-  box-shadow:0 0 30px rgba(0,0,0,.1);
+  box-shadow:0 0 30px $s;
   padding:15px;
   border-radius:15px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  height: 80px;
+  .title {
+    padding-left: 15px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin: 0;
+  }
+  .r {
+    position: absolute;
+    right: 15px;
+  }
+  button {
+    margin: 0;
+    height:50px;
+    border-radius:5px;
+  }
 }

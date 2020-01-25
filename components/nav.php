@@ -28,9 +28,9 @@
     ];
     foreach( $menu as $m ) {
         if( isset( $_GET['a'] ) ) {
-            $mc = $_GET['a'] == $m[0] ? 'class="on"' : '';
+            $mc = $_GET['a'] == $m[0] ? 'class="on '.strtolower($m[0]).'"' : 'class="'.strtolower($m[1]).'"';
         } else {
-            $mc = $m[0] == '' ? 'class="on"' : '';
+            $mc = $m[0] == '' ? 'class="on '.strtolower($m[1]).'"' : 'class="'.strtolower($m[1]).'"';
         }
         echo '<ul '.$mc.'><li><a href="'.APPURL.$m[0].'" '.$mc.'>'.$m[1].'</a>';
         if( isset( $m[2] ) ) {

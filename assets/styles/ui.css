@@ -41,7 +41,7 @@ header .copy {
   display: block;
   font-family: "Eiforya", sans-serif;
   text-align: center;
-  color: #3BA3D1;
+  color: #3ba3d1;
 }
 
 #user {
@@ -83,30 +83,63 @@ header .copy {
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
 }
 
+#menu > ul {
+  background: none;
+  transition: 0.6s;
+}
+#menu > ul > li {
+  position: relative;
+  border: 1px solid transparent;
+  margin-bottom: 5px;
+  transition: 0.6s;
+}
 #menu > ul > li > a {
   font-size: 18px;
   padding: 15px 20px;
   text-transform: uppercase;
   letter-spacing: 2px;
   color: #878787;
+  background-size: 30px;
+  transition: 0.6s;
 }
 #menu > ul > li > ul {
   height: 0;
   overflow: hidden;
+  border-radius: 0 0 10px 10px;
 }
 #menu > ul > li > ul > li > a {
   padding: 8px 20px;
 }
-#menu > ul.on {
+#menu > ul:not(.on) > li:hover {
+  border: 1px solid #e1e1e1;
+  border-radius: 10px;
+}
+#menu > ul:not(.on) > li:hover > ul {
   background: #F0F0F0;
+  width: calc(100% - 20px);
+  position: absolute;
+  height: auto;
+  padding: 5px 0 10px;
+  box-sizing: border-box;
+  left: 10px;
+  z-index: 99;
+  border: 1px solid #fff;
+  margin-top: -1px;
+}
+#menu > ul.on {
   border-radius: 10px;
 }
 #menu > ul.on > li > a {
-  color: #5f5f5f;
+  border-radius: 10px;
+  background-color: #3ba3d1;
+  color: #fff;
 }
 #menu > ul.on > li > ul {
   height: auto;
   padding-bottom: 10px;
+  width: calc(100% - 20px);
+  margin-left: 10px;
+  background-color: #F0F0F0;
 }
 #menu li {
   list-style: none;
@@ -114,6 +147,8 @@ header .copy {
 #menu a {
   display: block;
   font-weight: lighter;
+  background-position: 10px center;
+  background-repeat: no-repeat;
 }
 
 /* Sub Header */
@@ -122,6 +157,25 @@ header .copy {
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
   padding: 15px;
   border-radius: 15px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  height: 80px;
+}
+.shed .title {
+  padding-left: 15px;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  margin: 0;
+}
+.shed .r {
+  position: absolute;
+  right: 15px;
+}
+.shed button {
+  margin: 0;
+  height: 50px;
+  border-radius: 5px;
 }
 
 /*# sourceMappingURL=ui.css.map */
